@@ -2,6 +2,7 @@ using PerthLeadership.API.Extensions;
 using PerthLeadership.API.Middleware;
 using Serilog;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
@@ -74,4 +75,7 @@ app.MapControllers();
 app.Run();
 
 // Required for WebApplicationFactory in integration tests
-public partial class Program;
+namespace PerthLeadership.API
+{
+    public partial class Program;
+}
