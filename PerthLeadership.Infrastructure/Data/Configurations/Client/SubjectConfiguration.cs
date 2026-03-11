@@ -52,11 +52,13 @@ public class SubjectConfiguration : IEntityTypeConfiguration<Subject>
         builder.HasOne(e => e.OverAllUser)
             .WithMany(u => u.Subjects)
             .HasForeignKey(e => e.OverallUserId)
+            .HasPrincipalKey(e => e.OverallUserId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.ClientOrganization)
             .WithMany(c => c.Subjects)
             .HasForeignKey(e => e.ClientId)
+            .HasPrincipalKey(e => e.ClientId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

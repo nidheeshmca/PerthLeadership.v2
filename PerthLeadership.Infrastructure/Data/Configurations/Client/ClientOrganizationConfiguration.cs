@@ -49,6 +49,7 @@ public class ClientOrganizationConfiguration : IEntityTypeConfiguration<ClientOr
         builder.HasOne(e => e.OverAllUser)
             .WithMany(u => u.ClientOrganizations)
             .HasForeignKey(e => e.OverAllUserId)
+            .HasPrincipalKey(e => e.OverallUserId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }
