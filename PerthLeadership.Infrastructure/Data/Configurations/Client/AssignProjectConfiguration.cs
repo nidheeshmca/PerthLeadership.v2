@@ -10,7 +10,8 @@ public class AssignProjectConfiguration : IEntityTypeConfiguration<AssignProject
     {
         builder.ToTable("tblAssignProjects");
 
-        builder.HasKey(e => e.AssignProjectId);
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.AssignProjectId).HasName("AK_tblAssignProjects_AssignProjectId");
 
         builder.Property(e => e.AssignProjectId)
             .ValueGeneratedOnAdd()
@@ -23,11 +24,13 @@ public class AssignProjectConfiguration : IEntityTypeConfiguration<AssignProject
         builder.HasOne(e => e.Project)
             .WithMany(p => p.AssignProjects)
             .HasForeignKey(e => e.ProjectId)
+            .HasPrincipalKey(e => e.ProjectId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.AssignProgram)
             .WithMany(ap => ap.AssignProjects)
             .HasForeignKey(e => e.AssignProgramId)
+            .HasPrincipalKey(e => e.AssignedProgramId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

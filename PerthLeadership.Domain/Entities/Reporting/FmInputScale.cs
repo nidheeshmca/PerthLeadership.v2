@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Reporting;
 
-public class FmInputScale
+public class FmInputScale : EntityBase
 {
-    public long Id { get; set; }
     public string? Mode { get; set; }
     public string? Type { get; set; }
     public double? Begin { get; set; }

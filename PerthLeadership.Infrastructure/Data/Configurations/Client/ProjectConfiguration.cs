@@ -10,7 +10,8 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
     {
         builder.ToTable("tblProjects");
 
-        builder.HasKey(e => e.ProjectId);
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.ProjectId).HasName("AK_tblProjects_ProjectId");
 
         builder.Property(e => e.ProjectId)
             .HasColumnName("Projectid")
@@ -26,6 +27,7 @@ public class ProjectConfiguration : IEntityTypeConfiguration<Project>
         builder.HasOne(e => e.TrainingProgram)
             .WithMany(p => p.Projects)
             .HasForeignKey(e => e.ProgramId)
+            .HasPrincipalKey(e => e.ProgramId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

@@ -10,8 +10,8 @@ public class CouponConfiguration : IEntityTypeConfiguration<Coupon>
     {
         builder.ToTable("tblCoupons");
 
-        builder.HasKey(e => e.CouponId)
-            .HasName("PK_tblCoupons");
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.CouponId).HasName("AK_tblCoupons_CouponId");
 
         builder.Property(e => e.CouponId)
             .ValueGeneratedOnAdd()
@@ -27,16 +27,19 @@ public class CouponConfiguration : IEntityTypeConfiguration<Coupon>
         builder.HasOne(e => e.ClientOrganization)
             .WithMany(c => c.Coupons)
             .HasForeignKey(e => e.ClientId)
+            .HasPrincipalKey(e => e.ClientId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.Creator)
             .WithMany(c => c.Coupons)
             .HasForeignKey(e => e.CreatorId)
+            .HasPrincipalKey(e => e.CreatorId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.Licensee)
             .WithMany(l => l.Coupons)
             .HasForeignKey(e => e.LicenseeId)
+            .HasPrincipalKey(e => e.LicenseeId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

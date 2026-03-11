@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Reporting;
 
-public class FoaReport
+public class FoaReport : EntityBase
 {
-    public int SignatureId { get; set; }
     public string? ExecutiveSummary1 { get; set; }
     public string? ExecutiveSummary2 { get; set; }
     public string? ExecutiveSummary3 { get; set; }

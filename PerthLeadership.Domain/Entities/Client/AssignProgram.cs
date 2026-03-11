@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class AssignProgram
+public class AssignProgram : EntityBase
 {
     public int AssignedProgramId { get; set; }
     public int ProgramId { get; set; }

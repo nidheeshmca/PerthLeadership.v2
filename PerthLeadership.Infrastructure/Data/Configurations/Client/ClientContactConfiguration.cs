@@ -10,12 +10,7 @@ public class ClientContactConfiguration : IEntityTypeConfiguration<ClientContact
     {
         builder.ToTable("tblClientContacts");
 
-        builder.HasKey(e => e.ContactId)
-            .HasName("PK_tblClientContacts");
-
-        builder.Property(e => e.ContactId)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn(100, 1);
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.Salutation).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.FirstName).HasMaxLength(20).IsUnicode(false);
@@ -33,6 +28,7 @@ public class ClientContactConfiguration : IEntityTypeConfiguration<ClientContact
         builder.HasOne(e => e.ClientOrganization)
             .WithMany(c => c.ClientContacts)
             .HasForeignKey(e => e.ClientId)
+            .HasPrincipalKey(e => e.ClientId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

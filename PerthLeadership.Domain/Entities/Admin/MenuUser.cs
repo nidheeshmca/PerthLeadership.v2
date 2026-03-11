@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Admin;
 
-public class MenuUser
+public class MenuUser : EntityBase
 {
-    public int Id { get; set; }
     public string? User { get; set; }
     public string? Pass { get; set; }
     public string? Group { get; set; }

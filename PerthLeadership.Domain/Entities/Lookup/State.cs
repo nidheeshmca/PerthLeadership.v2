@@ -1,7 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Lookup;
 
-public class State
+public class State : EntityBase
 {
-    public int StateId { get; set; }
     public string? StateName { get; set; }
 }

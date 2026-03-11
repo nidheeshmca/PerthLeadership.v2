@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class OverAllUser
+public class OverAllUser : EntityBase
 {
     public int OverallUserId { get; set; }
     public string Email { get; set; } = null!;

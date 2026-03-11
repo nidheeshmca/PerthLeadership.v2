@@ -10,10 +10,11 @@ public class LanguageConfiguration : IEntityTypeConfiguration<Language>
     {
         builder.ToTable("LANGUAGES");
 
-        builder.HasKey(e => e.Id)
-            .HasName("PK_LANGUAGES");
+        builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
+        builder.HasAlternateKey(e => e.LanguageId).HasName("AK_LANGUAGES_LanguageId");
+
+        builder.Property(e => e.LanguageId)
             .HasColumnName("ID")
             .ValueGeneratedOnAdd()
             .UseIdentityColumn();

@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Admin;
 
-public class AdminLog
+public class AdminLog : EntityBase
 {
-    public int Id { get; set; }
     public DateTime? LogDate { get; set; }
     public string? AdminName { get; set; }
 }

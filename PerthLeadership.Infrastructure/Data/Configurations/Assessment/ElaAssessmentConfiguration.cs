@@ -12,11 +12,6 @@ public class ElaAssessmentConfiguration : IEntityTypeConfiguration<ElaAssessment
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.UserId).HasColumnName("userid").HasMaxLength(50);
         builder.Property(e => e.StartDate).HasColumnName("startdate").HasColumnType("smalldatetime");
         builder.Property(e => e.CompletionDate).HasColumnName("completiondate").HasColumnType("smalldatetime");

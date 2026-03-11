@@ -13,11 +13,6 @@ public class ElaExplanationConfiguration : IEntityTypeConfiguration<ElaExplanati
         builder.HasKey(e => e.Id)
             .HasName("PK_tblElaExplanation");
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.Name).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.Condition).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.Explanation).HasColumnType("nvarchar(max)");

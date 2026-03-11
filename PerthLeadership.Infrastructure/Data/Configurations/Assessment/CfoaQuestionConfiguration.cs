@@ -13,9 +13,6 @@ public class CfoaQuestionConfiguration : IEntityTypeConfiguration<CfoaQuestion>
         builder.HasKey(e => e.Id)
             .HasName("PK_CFOA_Questions");
 
-        builder.Property(e => e.Id)
-            .ValueGeneratedNever();
-
         builder.Property(e => e.Question).HasColumnType("nvarchar(max)");
         builder.Property(e => e.QA).HasMaxLength(255);
         builder.Property(e => e.QB).HasMaxLength(100);

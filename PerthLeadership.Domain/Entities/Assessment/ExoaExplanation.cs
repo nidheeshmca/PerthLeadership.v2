@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class ExoaExplanation
+public class ExoaExplanation : EntityBase
 {
-    public int Id { get; set; }
     public string? Name { get; set; }
     public string? Condition { get; set; }
     public string? Explanation1 { get; set; }

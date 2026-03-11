@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class Project
+public class Project : EntityBase
 {
     public int ProjectId { get; set; }
     public int ProgramId { get; set; }

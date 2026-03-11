@@ -10,11 +10,7 @@ public class CoachingSessionConfiguration : IEntityTypeConfiguration<CoachingSes
     {
         builder.ToTable("tblCoachingSession");
 
-        builder.HasKey(e => e.CoachId);
-
-        builder.Property(e => e.CoachId)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.PCC).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.SessionTime).HasMaxLength(50).IsUnicode(false);

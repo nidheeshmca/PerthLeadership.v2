@@ -13,9 +13,6 @@ public class FoaQuestionConfiguration : IEntityTypeConfiguration<FoaQuestion>
         builder.HasKey(e => e.Id)
             .HasName("PK_FOA_Questions");
 
-        builder.Property(e => e.Id)
-            .ValueGeneratedNever();
-
         builder.Property(e => e.QNum).HasColumnName("Q_Num");
         builder.Property(e => e.QuestionId).HasColumnName("Question_Id").HasColumnType("char(10)");
         builder.Property(e => e.Question).HasColumnType("nvarchar(max)");

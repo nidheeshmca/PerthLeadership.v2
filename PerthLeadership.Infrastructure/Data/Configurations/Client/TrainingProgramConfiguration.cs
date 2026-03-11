@@ -10,8 +10,8 @@ public class TrainingProgramConfiguration : IEntityTypeConfiguration<TrainingPro
     {
         builder.ToTable("tblPrograms");
 
-        builder.HasKey(e => e.ProgramId)
-            .HasName("PK_tblPrograms");
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.ProgramId).HasName("AK_tblPrograms_ProgramId");
 
         builder.Property(e => e.ProgramId)
             .ValueGeneratedOnAdd()

@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class ExoaQaAssessment
+public class ExoaQaAssessment : EntityBase
 {
-    public int Id { get; set; }
     public string? CertifiedByAdminLogin { get; set; }
     public DateTime? WhenCertified { get; set; }
     public string? Status { get; set; }

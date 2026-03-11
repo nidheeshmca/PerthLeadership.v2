@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class AssessmentSignature
+public class AssessmentSignature : EntityBase
 {
-    public int Id { get; set; }
     public byte? VACategoryId { get; set; }
     public byte? RUCategoryId { get; set; }
     public int? SignatureId { get; set; }

@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Reporting;
 
-public class FmIntensity
+public class FmIntensity : EntityBase
 {
-    public long Id { get; set; }
     public long? VaId { get; set; }
     public long? RuId { get; set; }
     public string? Mode { get; set; }

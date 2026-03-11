@@ -12,11 +12,6 @@ public class ImageSettingConfiguration : IEntityTypeConfiguration<ImageSetting>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.RUCategoryId).HasColumnName("RU_CategoryID");
         builder.Property(e => e.VACategoryId).HasColumnName("VA_CategoryID");
         builder.Property(e => e.ImageTop).HasColumnName("imageTop");

@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Lookup;
 
-public class PerthTermTranslation
+public class PerthTermTranslation : EntityBase
 {
     public int LanguageId { get; set; }
     public int PerthTermId { get; set; }

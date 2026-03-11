@@ -10,7 +10,8 @@ public class AssignSubjectConfiguration : IEntityTypeConfiguration<AssignSubject
     {
         builder.ToTable("tblAssignSubjects");
 
-        builder.HasKey(e => e.AssignSubjectId);
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.AssignSubjectId).HasName("AK_tblAssignSubjects_AssignSubjectId");
 
         builder.Property(e => e.AssignSubjectId)
             .ValueGeneratedOnAdd()
@@ -19,11 +20,13 @@ public class AssignSubjectConfiguration : IEntityTypeConfiguration<AssignSubject
         builder.HasOne(e => e.Subject)
             .WithMany(s => s.AssignSubjects)
             .HasForeignKey(e => e.SubjectId)
+            .HasPrincipalKey(e => e.SubjectId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.AssignProject)
             .WithMany(ap => ap.AssignSubjects)
             .HasForeignKey(e => e.AssignProjectId)
+            .HasPrincipalKey(e => e.AssignProjectId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

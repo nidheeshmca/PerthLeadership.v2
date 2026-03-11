@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class ClientContact
+public class ClientContact : EntityBase
 {
-    public int ContactId { get; set; }
     public int ClientId { get; set; }
     public string? Salutation { get; set; }
     public string? FirstName { get; set; }

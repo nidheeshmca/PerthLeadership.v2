@@ -13,10 +13,6 @@ public class CfoaAssessmentConfiguration : IEntityTypeConfiguration<CfoaAssessme
         builder.HasKey(e => e.Id)
             .HasName("PK_CFOA_Assessment");
 
-        builder.Property(e => e.Id)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.UserId).HasMaxLength(50);
         builder.Property(e => e.TestStatus).HasColumnType("tinyint");
         builder.Property(e => e.Past).HasColumnType("decimal(18, 0)");

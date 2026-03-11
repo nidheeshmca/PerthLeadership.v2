@@ -1,8 +1,10 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Lookup;
 
-public class Language
+public class Language : EntityBase
 {
-    public int Id { get; set; }
+    public int LanguageId { get; set; }
     public string Name { get; set; } = null!;
     public string? TranslatedName { get; set; }
 

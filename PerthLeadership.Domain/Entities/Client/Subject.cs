@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class Subject
+public class Subject : EntityBase
 {
     public int SubjectId { get; set; }
     public long? PID { get; set; }

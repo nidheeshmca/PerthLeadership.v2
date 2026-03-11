@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Reporting;
 
-public class SubjectAssessmentReport
+public class SubjectAssessmentReport : EntityBase
 {
-    public int SubjectAssessmentReportId { get; set; }
     public int? AssignSubjectId { get; set; }
     public string Status { get; set; } = null!;
     public DateTime? TakenOn { get; set; }

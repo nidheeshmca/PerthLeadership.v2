@@ -12,10 +12,6 @@ public class AssessmentSignatureConfiguration : IEntityTypeConfiguration<Assessm
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.VACategoryId).HasColumnType("tinyint");
         builder.Property(e => e.RUCategoryId).HasColumnType("tinyint");
         builder.Property(e => e.Signature).HasMaxLength(100);

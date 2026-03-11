@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Admin;
 
-public class AdminUser
+public class AdminUser : EntityBase
 {
-    public int Id { get; set; }
     public string? Login { get; set; }
     public string? Pass { get; set; }
     public bool? Super { get; set; }

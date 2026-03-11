@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class Licensee
+public class Licensee : EntityBase
 {
     public int LicenseeId { get; set; }
     public string? LicenseeName { get; set; }

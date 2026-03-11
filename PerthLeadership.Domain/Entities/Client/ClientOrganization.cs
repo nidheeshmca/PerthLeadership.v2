@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class ClientOrganization
+public class ClientOrganization : EntityBase
 {
     public int ClientId { get; set; }
     public string? ClientCode { get; set; }

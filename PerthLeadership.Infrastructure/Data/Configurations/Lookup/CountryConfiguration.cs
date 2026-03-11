@@ -10,12 +10,7 @@ public class CountryConfiguration : IEntityTypeConfiguration<Country>
     {
         builder.ToTable("country");
 
-        builder.HasKey(e => e.CountryId);
-
-        builder.Property(e => e.CountryId)
-            .HasColumnName("CountryID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.CountryName).HasMaxLength(150);
         builder.Property(e => e.CountryCode).HasMaxLength(3);

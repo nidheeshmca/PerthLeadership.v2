@@ -10,13 +10,7 @@ public class MenuItemConfiguration : IEntityTypeConfiguration<MenuItem>
     {
         builder.ToTable("tblMenuItem");
 
-        builder.HasKey(e => e.Mid)
-            .HasName("PK_tblMenuItem");
-
-        builder.Property(e => e.Mid)
-            .HasColumnName("MId")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.User).HasColumnName("User");
         builder.Property(e => e.Parent).HasColumnName("Parent");

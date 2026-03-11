@@ -10,8 +10,8 @@ public class OverAllUserConfiguration : IEntityTypeConfiguration<OverAllUser>
     {
         builder.ToTable("tblOverAllUsers");
 
-        builder.HasKey(e => e.OverallUserId)
-            .HasName("PK_tblOverAllUsers");
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.OverallUserId).HasName("AK_tblOverAllUsers_OverallUserId");
 
         builder.Property(e => e.OverallUserId)
             .HasColumnName("OverAllUserId")

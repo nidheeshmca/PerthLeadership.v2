@@ -12,11 +12,6 @@ public class FmInputScaleConfiguration : IEntityTypeConfiguration<FmInputScale>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.Mode).HasColumnName("mode").HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.Type).HasColumnName("type").HasColumnType("char(10)");
         builder.Property(e => e.Begin).HasColumnName("begin");

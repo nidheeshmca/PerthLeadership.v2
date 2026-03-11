@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class ElaExplanation
+public class ElaExplanation : EntityBase
 {
-    public int Id { get; set; }
     public string? Name { get; set; }
     public string? Condition { get; set; }
     public string? Explanation { get; set; }

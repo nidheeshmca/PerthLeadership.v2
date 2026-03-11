@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class AssignCoupon
+public class AssignCoupon : EntityBase
 {
-    public int CouponAssignedId { get; set; }
     public int? CouponId { get; set; }
     public string? Name { get; set; }
     public int? SubjectId { get; set; }

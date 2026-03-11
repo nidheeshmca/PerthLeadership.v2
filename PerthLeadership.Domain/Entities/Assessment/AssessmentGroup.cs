@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class AssessmentGroup
+public class AssessmentGroup : EntityBase
 {
     public int GroupId { get; set; }
     public string? GroupName { get; set; }

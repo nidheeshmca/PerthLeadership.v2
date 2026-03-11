@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class ExoaQuestion
+public class ExoaQuestion : EntityBase
 {
-    public int Id { get; set; }
     public string? Question { get; set; }
     public string? AnsLeft { get; set; }
     public string? AnsRight { get; set; }

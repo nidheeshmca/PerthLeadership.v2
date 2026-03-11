@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class CfoaQuestion
+public class CfoaQuestion : EntityBase
 {
-    public int Id { get; set; }
     public string? Question { get; set; }
     public string? QA { get; set; }
     public string? QB { get; set; }

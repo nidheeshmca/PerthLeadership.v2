@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class CfoaAssessment
+public class CfoaAssessment : EntityBase
 {
-    public int Id { get; set; }
     public long? PID { get; set; }
     public string? UserId { get; set; }
     public DateTime? StartDate { get; set; }

@@ -10,10 +10,7 @@ public class FoaReportConfiguration : IEntityTypeConfiguration<FoaReport>
     {
         builder.ToTable("FOA_Report");
 
-        builder.HasKey(e => e.SignatureId);
-
-        builder.Property(e => e.SignatureId)
-            .ValueGeneratedNever();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.ExecutiveSummary1).HasColumnName("ExecutiveSummary_1").HasColumnType("nvarchar(max)");
         builder.Property(e => e.ExecutiveSummary2).HasColumnName("ExecutiveSummary_2").HasColumnType("nvarchar(max)");

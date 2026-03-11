@@ -10,8 +10,9 @@ public class PerthTermTranslationConfiguration : IEntityTypeConfiguration<PerthT
     {
         builder.ToTable("PERTH_TERM_TRANSLATIONS");
 
-        builder.HasKey(e => new { e.LanguageId, e.PerthTermId })
-            .HasName("PK_PERTH_TERM_TRANSLATIONS");
+        builder.HasKey(e => e.Id);
+
+        builder.HasIndex(e => new { e.LanguageId, e.PerthTermId }).IsUnique().HasDatabaseName("IX_UNIQUE_PERTH_TERM_TRANSLATIONS");
 
         builder.Property(e => e.LanguageId).HasColumnName("LANGUAGE_ID");
         builder.Property(e => e.PerthTermId).HasColumnName("PERTH_TERM_ID");
@@ -20,11 +21,13 @@ public class PerthTermTranslationConfiguration : IEntityTypeConfiguration<PerthT
         builder.HasOne(e => e.Language)
             .WithMany(l => l.Translations)
             .HasForeignKey(e => e.LanguageId)
+            .HasPrincipalKey(e => e.LanguageId)
             .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(e => e.PerthTerm)
             .WithMany(t => t.Translations)
             .HasForeignKey(e => e.PerthTermId)
+            .HasPrincipalKey(e => e.PerthTermId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }

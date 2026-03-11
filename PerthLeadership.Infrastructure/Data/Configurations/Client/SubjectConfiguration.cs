@@ -10,8 +10,8 @@ public class SubjectConfiguration : IEntityTypeConfiguration<Subject>
     {
         builder.ToTable("tblSubjects");
 
-        builder.HasKey(e => e.SubjectId)
-            .HasName("PK_tblSubjects");
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.SubjectId).HasName("AK_tblSubjects_SubjectId");
 
         builder.Property(e => e.SubjectId)
             .ValueGeneratedOnAdd()

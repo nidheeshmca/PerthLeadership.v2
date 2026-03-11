@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class FoaQuestion
+public class FoaQuestion : EntityBase
 {
-    public int Id { get; set; }
     public long? PID { get; set; }
     public int? QNum { get; set; }
     public string? QuestionId { get; set; }

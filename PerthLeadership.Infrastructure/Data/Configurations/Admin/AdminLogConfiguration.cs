@@ -12,10 +12,6 @@ public class AdminLogConfiguration : IEntityTypeConfiguration<AdminLog>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.LogDate).HasColumnName("TDate");
         builder.Property(e => e.AdminName).HasColumnName("Admin").HasMaxLength(50);
     }

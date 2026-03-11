@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Admin;
 
-public class MenuItem
+public class MenuItem : EntityBase
 {
-    public int Mid { get; set; }
     public int? User { get; set; }
     public int? Parent { get; set; }
     public int? Sequence { get; set; }

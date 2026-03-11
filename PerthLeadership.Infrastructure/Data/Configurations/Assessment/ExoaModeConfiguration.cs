@@ -12,10 +12,6 @@ public class ExoaModeConfiguration : IEntityTypeConfiguration<ExoaMode>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedNever();
-
         builder.Property(e => e.Mode).HasMaxLength(100);
         builder.Property(e => e.Expl).HasColumnType("nvarchar(max)");
         builder.Property(e => e.NDExpl).HasColumnType("nvarchar(max)");

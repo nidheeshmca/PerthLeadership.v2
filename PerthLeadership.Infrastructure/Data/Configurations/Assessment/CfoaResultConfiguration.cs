@@ -13,11 +13,6 @@ public class CfoaResultConfiguration : IEntityTypeConfiguration<CfoaResult>
         builder.HasKey(e => e.Id)
             .HasName("PK_CFOA_Results");
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.UserId).HasColumnName("UserID").HasMaxLength(255);
         builder.Property(e => e.Answer).HasMaxLength(50);
         builder.Property(e => e.EnterDate).HasColumnType("smalldatetime");

@@ -12,11 +12,6 @@ public class AdminUserConfiguration : IEntityTypeConfiguration<AdminUser>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.Login).HasColumnName("login").HasMaxLength(50);
         builder.Property(e => e.Pass).HasColumnName("pass").HasMaxLength(50);
         builder.Property(e => e.Super).HasColumnName("super");

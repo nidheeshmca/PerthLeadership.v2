@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class ExoaFinMission
+public class ExoaFinMission : EntityBase
 {
-    public int FinMissId { get; set; }
     public string? Mode { get; set; }
     public int? Xcell { get; set; }
     public int? Ycell { get; set; }

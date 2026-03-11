@@ -10,10 +10,11 @@ public class PerthTermConfiguration : IEntityTypeConfiguration<PerthTerm>
     {
         builder.ToTable("PERTH_TERMS");
 
-        builder.HasKey(e => e.Id)
-            .HasName("PK_PERTH_TERMS");
+        builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
+        builder.HasAlternateKey(e => e.PerthTermId).HasName("AK_PERTH_TERMS_PerthTermId");
+
+        builder.Property(e => e.PerthTermId)
             .HasColumnName("ID")
             .ValueGeneratedOnAdd()
             .UseIdentityColumn();

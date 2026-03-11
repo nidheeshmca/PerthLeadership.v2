@@ -10,7 +10,8 @@ public class AssessmentGroupConfiguration : IEntityTypeConfiguration<AssessmentG
     {
         builder.ToTable("AssessmentGroups");
 
-        builder.HasKey(e => e.GroupId);
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.GroupId).HasName("AK_AssessmentGroups_GroupId");
 
         builder.Property(e => e.GroupId)
             .HasColumnName("Groupid")

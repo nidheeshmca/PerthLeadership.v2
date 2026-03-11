@@ -1,7 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Lookup;
 
-public class AssessmentDefinition
+public class AssessmentDefinition : EntityBase
 {
-    public int AssessmentId { get; set; }
     public string AssessmentName { get; set; } = null!;
 }

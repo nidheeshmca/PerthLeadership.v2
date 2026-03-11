@@ -10,8 +10,8 @@ public class ClientOrganizationConfiguration : IEntityTypeConfiguration<ClientOr
     {
         builder.ToTable("tblClients");
 
-        builder.HasKey(e => e.ClientId)
-            .HasName("PK_tblClients");
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.ClientId).HasName("AK_tblClients_ClientId");
 
         builder.Property(e => e.ClientId)
             .ValueGeneratedOnAdd()

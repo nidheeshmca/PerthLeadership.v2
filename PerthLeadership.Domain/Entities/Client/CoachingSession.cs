@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class CoachingSession
+public class CoachingSession : EntityBase
 {
-    public int CoachId { get; set; }
     public int? AssignProjectId { get; set; }
     public int? AssignSubjectId { get; set; }
     public string? PCC { get; set; }

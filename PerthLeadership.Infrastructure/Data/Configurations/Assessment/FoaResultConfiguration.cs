@@ -13,11 +13,6 @@ public class FoaResultConfiguration : IEntityTypeConfiguration<FoaResult>
         builder.HasKey(e => e.Id)
             .HasName("PK_FOA_Results");
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.UserId).HasColumnName("UserID").HasMaxLength(255);
         builder.Property(e => e.QuestionIdRef).HasColumnName("Question_Id").HasColumnType("char(10)");
         builder.Property(e => e.Answer).HasMaxLength(50);

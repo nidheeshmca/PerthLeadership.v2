@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class AssignProject
+public class AssignProject : EntityBase
 {
     public int AssignProjectId { get; set; }
     public int ProjectId { get; set; }

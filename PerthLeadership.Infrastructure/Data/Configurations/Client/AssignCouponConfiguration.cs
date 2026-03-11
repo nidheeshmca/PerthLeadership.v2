@@ -10,12 +10,7 @@ public class AssignCouponConfiguration : IEntityTypeConfiguration<AssignCoupon>
     {
         builder.ToTable("tblAssignCoupons");
 
-        builder.HasKey(e => e.CouponAssignedId)
-            .HasName("PK_tblAssignCoupons");
-
-        builder.Property(e => e.CouponAssignedId)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.Name).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.Email).HasMaxLength(50).IsUnicode(false);
@@ -26,16 +21,19 @@ public class AssignCouponConfiguration : IEntityTypeConfiguration<AssignCoupon>
         builder.HasOne(e => e.Coupon)
             .WithMany(c => c.AssignCoupons)
             .HasForeignKey(e => e.CouponId)
+            .HasPrincipalKey(e => e.CouponId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.Subject)
             .WithMany(s => s.AssignCoupons)
             .HasForeignKey(e => e.SubjectId)
+            .HasPrincipalKey(e => e.SubjectId)
             .OnDelete(DeleteBehavior.Restrict);
 
         builder.HasOne(e => e.AssignSubject)
             .WithMany()
             .HasForeignKey(e => e.AssignSubjectId)
+            .HasPrincipalKey(e => e.AssignSubjectId)
             .OnDelete(DeleteBehavior.Restrict);
     }
 }

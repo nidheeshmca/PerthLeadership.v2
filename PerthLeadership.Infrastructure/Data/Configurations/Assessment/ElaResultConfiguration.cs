@@ -12,11 +12,6 @@ public class ElaResultConfiguration : IEntityTypeConfiguration<ElaResult>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.UserId).HasColumnName("UserID").HasMaxLength(255);
         builder.Property(e => e.Answer).HasMaxLength(50);
         builder.Property(e => e.EnterDate).HasColumnType("smalldatetime");

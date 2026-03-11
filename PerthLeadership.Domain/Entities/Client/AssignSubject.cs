@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class AssignSubject
+public class AssignSubject : EntityBase
 {
     public int AssignSubjectId { get; set; }
     public int SubjectId { get; set; }

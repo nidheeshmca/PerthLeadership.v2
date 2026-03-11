@@ -12,10 +12,6 @@ public class ExoaExplanationConfiguration : IEntityTypeConfiguration<ExoaExplana
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedNever();
-
         builder.Property(e => e.Name).HasMaxLength(100);
         builder.Property(e => e.Condition).HasColumnName("condition").HasMaxLength(255);
         builder.Property(e => e.Explanation1).HasColumnType("nvarchar(max)");

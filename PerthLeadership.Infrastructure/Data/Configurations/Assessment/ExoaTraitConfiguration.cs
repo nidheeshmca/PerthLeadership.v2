@@ -12,9 +12,6 @@ public class ExoaTraitConfiguration : IEntityTypeConfiguration<ExoaTrait>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID");
-
         builder.Property(e => e.Mode).HasMaxLength(50);
         builder.Property(e => e.Trait).HasMaxLength(50);
         builder.Property(e => e.Expl).HasColumnType("nvarchar(max)");

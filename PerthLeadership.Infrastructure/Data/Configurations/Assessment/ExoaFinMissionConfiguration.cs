@@ -10,11 +10,7 @@ public class ExoaFinMissionConfiguration : IEntityTypeConfiguration<ExoaFinMissi
     {
         builder.ToTable("EXOA_FinMission");
 
-        builder.HasKey(e => e.FinMissId);
-
-        builder.Property(e => e.FinMissId)
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.Mode).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.FM).HasMaxLength(20).IsUnicode(false);

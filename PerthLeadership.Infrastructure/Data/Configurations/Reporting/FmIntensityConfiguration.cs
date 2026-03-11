@@ -12,11 +12,6 @@ public class FmIntensityConfiguration : IEntityTypeConfiguration<FmIntensity>
 
         builder.HasKey(e => e.Id);
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.VaId).HasColumnName("vaId");
         builder.Property(e => e.RuId).HasColumnName("ruId");
         builder.Property(e => e.Mode).HasColumnName("mode").HasMaxLength(50).IsUnicode(false);

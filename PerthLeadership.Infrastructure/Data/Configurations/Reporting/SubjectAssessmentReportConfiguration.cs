@@ -10,13 +10,7 @@ public class SubjectAssessmentReportConfiguration : IEntityTypeConfiguration<Sub
     {
         builder.ToTable("tblSubjectAssessmentReports");
 
-        builder.HasKey(e => e.SubjectAssessmentReportId)
-            .HasName("PK_tblSubjectAssessmentReports");
-
-        builder.Property(e => e.SubjectAssessmentReportId)
-            .HasColumnName("SubjectAssessmentReportID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.Status).HasMaxLength(20).IsUnicode(false).IsRequired();
         builder.Property(e => e.Report).HasColumnType("binary(50)");

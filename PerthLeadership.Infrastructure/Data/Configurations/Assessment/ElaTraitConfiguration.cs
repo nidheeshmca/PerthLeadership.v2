@@ -13,11 +13,6 @@ public class ElaTraitConfiguration : IEntityTypeConfiguration<ElaTrait>
         builder.HasKey(e => e.Id)
             .HasName("PK_tblElaTriats");
 
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
-
         builder.Property(e => e.Mode).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.Trait).HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.Expl).HasColumnType("nvarchar(max)");

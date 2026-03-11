@@ -1,6 +1,8 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Client;
 
-public class TrainingProgram
+public class TrainingProgram : EntityBase
 {
     public int ProgramId { get; set; }
     public string ProgramName { get; set; } = null!;

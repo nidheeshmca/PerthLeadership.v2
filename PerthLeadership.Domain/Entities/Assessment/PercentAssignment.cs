@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Assessment;
 
-public class PercentAssignment
+public class PercentAssignment : EntityBase
 {
-    public int Id { get; set; }
     public int? CategoryId { get; set; }
     public int? LowerBound { get; set; }
     public int? UpperBound { get; set; }

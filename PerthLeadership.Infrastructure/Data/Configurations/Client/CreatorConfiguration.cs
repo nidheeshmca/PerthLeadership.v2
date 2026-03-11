@@ -10,7 +10,8 @@ public class CreatorConfiguration : IEntityTypeConfiguration<Creator>
     {
         builder.ToTable("tblCreator");
 
-        builder.HasKey(e => e.CreatorId);
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.CreatorId).HasName("AK_tblCreator_CreatorId");
 
         builder.Property(e => e.CreatorId)
             .ValueGeneratedOnAdd()

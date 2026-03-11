@@ -10,7 +10,8 @@ public class LicenseeConfiguration : IEntityTypeConfiguration<Licensee>
     {
         builder.ToTable("tblLicensee");
 
-        builder.HasKey(e => e.LicenseeId);
+        builder.HasKey(e => e.Id);
+        builder.HasAlternateKey(e => e.LicenseeId).HasName("AK_tblLicensee_LicenseeId");
 
         builder.Property(e => e.LicenseeId)
             .ValueGeneratedOnAdd()

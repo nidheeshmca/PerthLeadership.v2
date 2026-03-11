@@ -10,13 +10,7 @@ public class AttachedDocumentConfiguration : IEntityTypeConfiguration<AttachedDo
     {
         builder.ToTable("tblAttachedDocuments");
 
-        builder.HasKey(e => e.Id)
-            .HasName("PK_tblAttachedDocuments");
-
-        builder.Property(e => e.Id)
-            .HasColumnName("ID")
-            .ValueGeneratedOnAdd()
-            .UseIdentityColumn();
+        builder.HasKey(e => e.Id);
 
         builder.Property(e => e.ReferenceId).HasColumnName("ReferenceID").HasMaxLength(50).IsUnicode(false);
         builder.Property(e => e.ReferenceType).HasColumnName("RefrenceType").HasMaxLength(50).IsUnicode(false);

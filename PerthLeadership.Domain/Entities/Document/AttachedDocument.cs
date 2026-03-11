@@ -1,8 +1,9 @@
+using PerthLeadership.Domain.Common;
+
 namespace PerthLeadership.Domain.Entities.Document;
 
-public class AttachedDocument
+public class AttachedDocument : EntityBase
 {
-    public int Id { get; set; }
     public string? ReferenceId { get; set; }
     public string? ReferenceType { get; set; }
     public DateTime? SavedDate { get; set; }

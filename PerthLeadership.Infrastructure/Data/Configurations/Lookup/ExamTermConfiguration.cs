@@ -10,8 +10,9 @@ public class ExamTermConfiguration : IEntityTypeConfiguration<ExamTerm>
     {
         builder.ToTable("Exam_Terms");
 
-        builder.HasKey(e => new { e.Exam, e.Culture })
-            .HasName("PK_Exam_Terms");
+        builder.HasKey(e => e.Id);
+
+        builder.HasIndex(e => new { e.Exam, e.Culture }).IsUnique().HasDatabaseName("IX_UNIQUE_Exam_Terms");
 
         builder.Property(e => e.Exam).HasMaxLength(20).IsUnicode(false);
         builder.Property(e => e.Culture).HasMaxLength(20).IsUnicode(false);
