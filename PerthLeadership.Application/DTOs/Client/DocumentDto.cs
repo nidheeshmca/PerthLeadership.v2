@@ -1,6 +1,6 @@
 namespace PerthLeadership.Application.DTOs.Client;
 public sealed record DocumentDto(
-    int Id, string? ReferenceId, string? ReferenceType,
+    Guid Id, string? ReferenceId, string? ReferenceType,
     DateTime? SavedDate, string? Title, string? DocumentName,
     string? ContentType, string? Description);
 

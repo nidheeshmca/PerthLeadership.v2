@@ -1,6 +1,6 @@
 namespace PerthLeadership.Application.DTOs.Assessment;
 public sealed record AssessmentDto(
-    int Id, string? UserId, string AssessmentType,
+    Guid Id, string? UserId, string AssessmentType,
     DateTime? StartDate, DateTime? CompletionDate,
     string? TestStatus, int? SumVa, int? SumRu,
     string? Signature, string? CompanyName);
@@ -10,7 +10,7 @@ public sealed record AssessmentStatusDto(
     bool IsCompleted, DateTime? StartDate, DateTime? CompletionDate);
 
 public sealed record AssessmentResultDto(
-    int AssessmentId, string AssessmentType, int? SumVa, int? SumRu,
+    Guid AssessmentId, string AssessmentType, int? SumVa, int? SumRu,
     string? Signature, string? FinancialMission);
 
 public sealed record StartAssessmentRequest(
@@ -24,7 +24,7 @@ public sealed record CompleteAssessmentRequest(
     string UserId, string AssessmentType);
 
 public sealed record QuestionDto(
-    int Id, string? Question, string? AnswerLeft, string? AnswerRight,
+    Guid Id, string? Question, string? AnswerLeft, string? AnswerRight,
     string? Type, bool? IsGenuine, string? Category);
 
 public sealed record SignatureDto(

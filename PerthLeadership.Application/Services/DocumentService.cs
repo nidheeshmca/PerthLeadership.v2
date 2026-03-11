@@ -11,7 +11,7 @@ public sealed class DocumentService(
     IRepository<AttachedDocument> documentRepository,
     IUnitOfWork unitOfWork) : IDocumentService
 {
-    public async Task<DocumentDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<DocumentDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
     {
         return await documentRepository.Query()
             .AsNoTracking()
@@ -59,7 +59,7 @@ public sealed class DocumentService(
             document.ContentType, document.Description);
     }
 
-    public async Task<DocumentDto> UpdateAsync(int id, UploadDocumentRequest request, CancellationToken cancellationToken = default)
+    public async Task<DocumentDto> UpdateAsync(Guid id, UploadDocumentRequest request, CancellationToken cancellationToken = default)
     {
         var document = await documentRepository.GetByIdAsync(id, cancellationToken)
             ?? throw new EntityNotFoundException(nameof(AttachedDocument), id);
@@ -82,7 +82,7 @@ public sealed class DocumentService(
             document.ContentType, document.Description);
     }
 
-    public async Task DeleteAsync(int id, CancellationToken cancellationToken = default)
+    public async Task DeleteAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var document = await documentRepository.GetByIdAsync(id, cancellationToken)
             ?? throw new EntityNotFoundException(nameof(AttachedDocument), id);

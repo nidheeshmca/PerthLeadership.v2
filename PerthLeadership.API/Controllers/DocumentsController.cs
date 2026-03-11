@@ -8,8 +8,8 @@ namespace PerthLeadership.API.Controllers;
 [Route("api/[controller]")]
 public sealed class DocumentsController(IDocumentService documentService) : ControllerBase
 {
-    [HttpGet("{id:int}")]
-    public async Task<ActionResult<DocumentDto>> GetById(int id, CancellationToken cancellationToken)
+    [HttpGet("{id:guid}")]
+    public async Task<ActionResult<DocumentDto>> GetById(Guid id, CancellationToken cancellationToken)
     {
         var document = await documentService.GetByIdAsync(id, cancellationToken);
         return document is null ? NotFound() : Ok(document);
@@ -30,22 +30,22 @@ public sealed class DocumentsController(IDocumentService documentService) : Cont
         return CreatedAtAction(nameof(GetById), new { id = document.Id }, document);
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<ActionResult<DocumentDto>> Update(int id, [FromBody] UploadDocumentRequest request, CancellationToken cancellationToken)
+    [HttpPut("{id:guid}")]
+    public async Task<ActionResult<DocumentDto>> Update(Guid id, [FromBody] UploadDocumentRequest request, CancellationToken cancellationToken)
     {
         var document = await documentService.UpdateAsync(id, request, cancellationToken);
         return Ok(document);
     }
 
-    [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
         await documentService.DeleteAsync(id, cancellationToken);
         return NoContent();
     }
 
-    [HttpGet("{id:int}/download")]
-    public async Task<IActionResult> Download(int id, CancellationToken cancellationToken)
+    [HttpGet("{id:guid}/download")]
+    public async Task<IActionResult> Download(Guid id, CancellationToken cancellationToken)
     {
         var document = await documentService.GetByIdAsync(id, cancellationToken);
         if (document is null)

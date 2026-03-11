@@ -11,7 +11,7 @@ public sealed class AdminService(
     IRepository<AdminUser> adminRepository,
     IUnitOfWork unitOfWork) : IAdminService
 {
-    public async Task<AdminUserDto?> GetAdminAsync(int id, CancellationToken cancellationToken = default)
+    public async Task<AdminUserDto?> GetAdminAsync(Guid id, CancellationToken cancellationToken = default)
     {
         return await adminRepository.Query()
             .AsNoTracking()
@@ -64,7 +64,7 @@ public sealed class AdminService(
         return new AdminUserDto(admin.Id, admin.Login, admin.Super, admin.Activation, admin.LastUpdate);
     }
 
-    public async Task<AdminUserDto> UpdateAdminAsync(int id, UpdateAdminRequest request, CancellationToken cancellationToken = default)
+    public async Task<AdminUserDto> UpdateAdminAsync(Guid id, UpdateAdminRequest request, CancellationToken cancellationToken = default)
     {
         var admin = await adminRepository.GetByIdAsync(id, cancellationToken)
             ?? throw new EntityNotFoundException(nameof(AdminUser), id);
@@ -81,7 +81,7 @@ public sealed class AdminService(
         return new AdminUserDto(admin.Id, admin.Login, admin.Super, admin.Activation, admin.LastUpdate);
     }
 
-    public async Task DeleteAdminAsync(int id, CancellationToken cancellationToken = default)
+    public async Task DeleteAdminAsync(Guid id, CancellationToken cancellationToken = default)
     {
         var admin = await adminRepository.GetByIdAsync(id, cancellationToken)
             ?? throw new EntityNotFoundException(nameof(AdminUser), id);

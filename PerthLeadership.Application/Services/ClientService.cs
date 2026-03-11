@@ -143,7 +143,7 @@ public sealed class ClientService(
                 c.Zip, c.Country, c.Website, c.PhoneNo1,
                 c.Status, c.Comments, c.CreatedOn,
                 c.ClientContacts.Select(cc => new ClientContactDto(
-                    cc.ContactId, cc.Salutation, cc.FirstName, cc.LastName,
+                    cc.Id, cc.Salutation, cc.FirstName, cc.LastName,
                     cc.Email, cc.Phone1, cc.City, cc.Country)).ToList(),
                 c.AssignPrograms.Select(ap => new ProgramDto(
                     ap.TrainingProgram!.ProgramId, ap.TrainingProgram.ProgramName, ap.TrainingProgram.Description,

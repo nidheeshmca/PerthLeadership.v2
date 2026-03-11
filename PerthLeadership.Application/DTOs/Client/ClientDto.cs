@@ -12,7 +12,7 @@ public sealed record ClientDetailDto(
     IReadOnlyList<ProgramDto> Programs);
 
 public sealed record ClientContactDto(
-    int ContactId, string? Salutation, string? FirstName, string? LastName,
+    Guid Id, string? Salutation, string? FirstName, string? LastName,
     string? Email, string? Phone1, string? City, string? Country);
 
 public sealed record CreateClientRequest(

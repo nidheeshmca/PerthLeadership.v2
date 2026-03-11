@@ -8,8 +8,8 @@ namespace PerthLeadership.API.Controllers;
 [Route("api/[controller]")]
 public sealed class AdminController(IAdminService adminService) : ControllerBase
 {
-    [HttpGet("{id:int}")]
-    public async Task<ActionResult<AdminUserDto>> GetById(int id, CancellationToken cancellationToken)
+    [HttpGet("{id:guid}")]
+    public async Task<ActionResult<AdminUserDto>> GetById(Guid id, CancellationToken cancellationToken)
     {
         var admin = await adminService.GetAdminAsync(id, cancellationToken);
         return admin is null ? NotFound() : Ok(admin);
@@ -36,15 +36,15 @@ public sealed class AdminController(IAdminService adminService) : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = admin.Id }, admin);
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<ActionResult<AdminUserDto>> Update(int id, [FromBody] UpdateAdminRequest request, CancellationToken cancellationToken)
+    [HttpPut("{id:guid}")]
+    public async Task<ActionResult<AdminUserDto>> Update(Guid id, [FromBody] UpdateAdminRequest request, CancellationToken cancellationToken)
     {
         var admin = await adminService.UpdateAdminAsync(id, request, cancellationToken);
         return Ok(admin);
     }
 
-    [HttpDelete("{id:int}")]
-    public async Task<IActionResult> Delete(int id, CancellationToken cancellationToken)
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Delete(Guid id, CancellationToken cancellationToken)
     {
         await adminService.DeleteAdminAsync(id, cancellationToken);
         return NoContent();
