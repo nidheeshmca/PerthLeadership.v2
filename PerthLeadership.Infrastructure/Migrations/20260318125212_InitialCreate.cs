@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PerthLeadership.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class intialmigration : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -695,7 +695,7 @@ namespace PerthLeadership.Infrastructure.Migrations
                 name: "LANGUAGES",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RowId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NAME = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
@@ -703,7 +703,7 @@ namespace PerthLeadership.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LANGUAGES", x => x.Id);
+                    table.PrimaryKey("PK_LANGUAGES", x => x.RowId);
                     table.UniqueConstraint("AK_LANGUAGES_LanguageId", x => x.ID);
                 });
 
@@ -728,7 +728,7 @@ namespace PerthLeadership.Infrastructure.Migrations
                 name: "PERTH_TERMS",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RowId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TERM = table.Column<string>(type: "varchar(100)", unicode: false, maxLength: 100, nullable: false),
@@ -736,7 +736,7 @@ namespace PerthLeadership.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PERTH_TERMS", x => x.Id);
+                    table.PrimaryKey("PK_PERTH_TERMS", x => x.RowId);
                     table.UniqueConstraint("AK_PERTH_TERMS_PerthTermId", x => x.ID);
                 });
 

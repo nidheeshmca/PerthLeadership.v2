@@ -12,6 +12,8 @@ public class PerthTermConfiguration : IEntityTypeConfiguration<PerthTerm>
 
         builder.HasKey(e => e.Id);
 
+        builder.Property(e => e.Id).HasColumnName("RowId");
+
         builder.HasAlternateKey(e => e.PerthTermId).HasName("AK_PERTH_TERMS_PerthTermId");
 
         builder.Property(e => e.PerthTermId)

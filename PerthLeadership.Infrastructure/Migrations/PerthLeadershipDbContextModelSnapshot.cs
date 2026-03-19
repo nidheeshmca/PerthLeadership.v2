@@ -3061,7 +3061,8 @@ namespace PerthLeadership.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("RowId");
 
                     b.Property<int>("LanguageId")
                         .ValueGeneratedOnAdd()
@@ -3098,7 +3099,8 @@ namespace PerthLeadership.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("RowId");
 
                     b.Property<int>("PerthTermId")
                         .ValueGeneratedOnAdd()

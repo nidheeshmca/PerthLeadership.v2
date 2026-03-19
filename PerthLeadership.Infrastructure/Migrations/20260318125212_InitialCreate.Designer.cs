@@ -12,8 +12,8 @@ using PerthLeadership.Infrastructure.Data;
 namespace PerthLeadership.Infrastructure.Migrations
 {
     [DbContext(typeof(PerthLeadershipDbContext))]
-    [Migration("20260311192354_intial-migration")]
-    partial class intialmigration
+    [Migration("20260318125212_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -3064,7 +3064,8 @@ namespace PerthLeadership.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("RowId");
 
                     b.Property<int>("LanguageId")
                         .ValueGeneratedOnAdd()
@@ -3101,7 +3102,8 @@ namespace PerthLeadership.Infrastructure.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("RowId");
 
                     b.Property<int>("PerthTermId")
                         .ValueGeneratedOnAdd()

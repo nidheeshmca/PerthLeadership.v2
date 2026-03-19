@@ -12,6 +12,8 @@ public class LanguageConfiguration : IEntityTypeConfiguration<Language>
 
         builder.HasKey(e => e.Id);
 
+        builder.Property(e => e.Id).HasColumnName("RowId");
+
         builder.HasAlternateKey(e => e.LanguageId).HasName("AK_LANGUAGES_LanguageId");
 
         builder.Property(e => e.LanguageId)
